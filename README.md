@@ -32,3 +32,13 @@
 		fmt.Println("n larger than 100")
 	}
 ```
+
+## pointer
+```Go
+	// pointer
+	// ポインタ変数の宣言
+	i := 100
+	var p *int = &i
+	fmt.Printf("i pointer: %p\n", p)
+	fmt.Printf("i: %d\n", *p)
+```
