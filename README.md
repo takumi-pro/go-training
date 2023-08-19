@@ -94,3 +94,28 @@ func main() {
 	pic.Show(Pic)
 }
 ```
+
+### Exercise: Maps
+
+```Go
+package main
+
+import (
+	"golang.org/x/tour/wc"
+	"strings"
+)
+
+func WordCount(s string) map[string]int {
+	var m = make(map[string]int)
+	splitStrings := strings.Split(s, " ")
+	for _, v := range splitStrings {
+		m[v]++
+	}
+	return m
+}
+
+func main() {
+	wc.Test(WordCount)
+}
+
+```

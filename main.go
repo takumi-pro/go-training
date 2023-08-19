@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"training/mypackage"
 )
 
@@ -72,6 +73,7 @@ func main() {
 	fmt.Println(n)
 
 	slice()
+	maps()
 }
 
 func slice() {
@@ -94,4 +96,32 @@ func slice() {
 	fmt.Printf("len=%d cap=%d %v\n", len(b), cap(b), b)
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 
+}
+
+// map
+func maps() {
+
+	type User struct {
+		name string
+		age  int
+	}
+
+	// mapの宣言
+	var m = make(map[string]int)
+	m["key1"] = 10
+	m["key2"] = 20
+
+	// 型にstructを用いる
+	var sm = make(map[string]User)
+	sm["key1"] = User{"taro", 23}
+	sm["key2"] = User{"jiro", 12}
+
+	s := "i am takumi"
+	sp := strings.Split(s, " ")
+	for _, v := range sp {
+		fmt.Println(v)
+	}
+
+	fmt.Println(m)
+	fmt.Println(sm)
 }
