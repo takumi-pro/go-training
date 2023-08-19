@@ -36,4 +36,28 @@ func main() {
 	var p *int = &i
 	fmt.Printf("i pointer: %p\n", p)
 	fmt.Printf("i: %d\n", *p)
+
+	// struct
+	type User struct {
+		name  string
+		age   int
+		email string
+	}
+
+	// structの宣言
+	u := User{"taro", 23, "test@test.com"}
+	u.age = 100
+
+	// structは参照渡しではない
+	// uをcuにコピーしてcu.emailを変更してもuへの影響はない
+	cu := u
+	cu.email = "dummy"
+
+	// structのポインタを渡す
+	pu := &u
+	pu.email = "pointer email"
+
+	fmt.Printf("User struct: %+v\n", u)
+	fmt.Printf("User struct: %+v\n", cu)
+	fmt.Printf("User struct: %+v\n", pu)
 }
