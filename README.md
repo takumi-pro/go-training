@@ -70,3 +70,27 @@
 	fmt.Printf("User struct: %+v\n", cu)
 	fmt.Printf("User struct: %+v\n", pu)
 ```
+
+## ATour of Go解答
+### Exercise: Slices
+```Go
+package main
+
+import "golang.org/x/tour/pic"
+
+func Pic(dx, dy int) [][]uint8 {
+	u := make([][]uint8, dy)
+	for y := 0; y < dy; y++ {
+		s := make([]uint8, dx)
+		for x := 0; x < dx; x++ {
+			s[x] = uint8(x*y)
+		}
+		u[y] = s
+	}
+	return u
+}
+
+func main() {
+	pic.Show(Pic)
+}
+```

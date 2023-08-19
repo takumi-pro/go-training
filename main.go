@@ -60,4 +60,38 @@ func main() {
 	fmt.Printf("User struct: %+v\n", u)
 	fmt.Printf("User struct: %+v\n", cu)
 	fmt.Printf("User struct: %+v\n", pu)
+
+	// array
+	var a [2]int
+	a[0] = 1
+	a[1] = 2
+	var e [3][1]uint8
+	fmt.Println(e)
+
+	n := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(n)
+
+	slice()
+}
+
+func slice() {
+	// slice
+	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+
+	// make関数を使用することで動的配列を作成できる
+	a := make([]int, 5)
+	b := make([]int, 5, 10)
+
+	// append関数でsliceに要素を追加
+	s = append(s, 100)
+
+	// range
+	for i, v := range s {
+		fmt.Printf("s slice %d:  %d\n", i, v)
+	}
+	fmt.Printf("len=%d cap=%d %v\n", len(a), cap(a), a)
+	fmt.Printf("len=%d cap=%d %v\n", len(b), cap(b), b)
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+
 }
