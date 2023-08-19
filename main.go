@@ -22,4 +22,11 @@ func main() {
 		sum += sum
 		fmt.Printf("sum :%d\n", sum)
 	}
+
+	// if with a short statement
+	if n := 101; n < 100 {
+		fmt.Println("n smaller than 100")
+	} else {
+		fmt.Println("n larger than 100")
+	}
 }
